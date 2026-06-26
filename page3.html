@@ -790,7 +790,7 @@
       <a href="https://forhad2008.github.io/Boraldo/page1.html" class="page-btn">1</a>
       <a href="https://forhad2008.github.io/page2/page2.html" class="page-btn ">2</a>
       <a href="page3.html#shop" class="page-btn active">3</a>
-     </div>
+    </div>
   </section>
 
   <footer>
@@ -799,188 +799,196 @@
       <p>© 2026 All rights reserved.</p>
   </footer>
 
-  <script>
-    // Load existing cart from LocalStorage
-    let cart = JSON.parse(localStorage.getItem('threadlab_cart')) || [];
+<script>
+  // Load existing cart from LocalStorage
+  let cart = JSON.parse(localStorage.getItem('threadlab_cart')) || [];
 
-    // Products list updated exactly with your Model-13 to 24 data and custom text colors
-    const products = [
-      { id: 'boraldo-tee-m25', name: 'Boraldo Tee Model-25(Devil Mind)', price: 329, image: 't-shirt design25.jpg', link: '1.html', color: 'Black' },
-      { id: 'boraldo-tee-m26', name: 'Boraldo Tee Model-26(The Mountain)', price: 260, image: 't-shirt design26.jpg', link: '2.html', color: 'Black' },
-      { id: 'boraldo-tee-m27', name: 'Boraldo Tee Model-27(Mix Art V-1)', price: 289, image: 't-shirt design27.jpg', link: '3.html', color: 'Black' },
-      { id: 'boraldo-tee-m28', name: 'Boraldo Tee Model-28(Money Art V-2)', price: 280, image: 't-shirt design28.jpg', link: '4.html', color: 'Black' },
-      { id: 'boraldo-tee-m29', name: 'Boraldo Tee Model-29(Humanity V-1)', price: 260, image: 't-shirt design29.jpg', link: '5.html', color: 'White' },
-      { id: 'boraldo-tee-m30', name: 'Boraldo Tee Model-30(Money Blind V-1)', price: 260, image: 't-shirt design30.jpg', link: '6.html', color: 'White' },
-      { id: 'boraldo-tee-m31', name: 'Boraldo Tee Model-31(Round world)', price: 229, image: 't-shirt design31.jpg', link: '7.html', color: 'Black' },
-      { id: 'boraldo-tee-m32', name: 'Boraldo Tee Model-32(The King)', price: 269, image: 't-shirt design32.jpg', link: '8.html', color: 'Golden Brown' },
-      { id: 'boraldo-tee-m33', name: 'Boraldo Tee Model-33(Reverse Art)', price: 189, image: 't-shirt design33.jpg', link: '9.html', color: ' White' },
-      { id: 'boraldo-tee-m34', name: 'Boraldo Tee Model-34(Hidden Art)', price: 289, image: 't-shirt design34.jpg', link: '10.html', color: ' Black' },
-      { id: 'boraldo-tee-m35', name: 'Boraldo Tee Model-35(Dark Abstract Art)', price: 299, image: 't-shirt design35.jpg', link: '11.html', color: ' Green Gray' },
-      { id: 'boraldo-tee-m36', name: 'Boraldo Tee Model-36(Cool Devil)', price: 305, image: 't-shirt design36.jpg', link: '12.html', color: 'Black' },
-    ];
+  // Products list updated exactly with your Model-25 to 36 data and custom text colors
+  const products = [
+    { id: 'boraldo-tee-m25', name: 'Boraldo Tee Model-25(Devil Mind)', price: 329, image: 't-shirt design25.jpg', link: '1.html', color: 'Black' },
+    { id: 'boraldo-tee-m26', name: 'Boraldo Tee Model-26(The Mountain)', price: 260, image: 't-shirt design26.jpg', link: '2.html', color: 'Black' },
+    { id: 'boraldo-tee-m27', name: 'Boraldo Tee Model-27(Mix Art V-1)', price: 289, image: 't-shirt design27.jpg', link: '3.html', color: 'Black' },
+    { id: 'boraldo-tee-m28', name: 'Boraldo Tee Model-28(Money Art V-2)', price: 280, image: 't-shirt design28.jpg', link: '4.html', color: 'Black' },
+    { id: 'boraldo-tee-m29', name: 'Boraldo Tee Model-29(Humanity V-1)', price: 260, image: 't-shirt design29.jpg', link: '5.html', color: 'White' },
+    { id: 'boraldo-tee-m30', name: 'Boraldo Tee Model-30(Money Blind V-1)', price: 260, image: 't-shirt design30.jpg', link: '6.html', color: 'White' },
+    { id: 'boraldo-tee-m31', name: 'Boraldo Tee Model-31(Round world)', price: 229, image: 't-shirt design31.jpg', link: '7.html', color: 'Black' },
+    { id: 'boraldo-tee-m32', name: 'Boraldo Tee Model-32(The King)', price: 269, image: 't-shirt design32.jpg', link: '8.html', color: 'Golden Brown' },
+    { id: 'boraldo-tee-m33', name: 'Boraldo Tee Model-33(Reverse Art)', price: 189, image: 't-shirt design33.jpg', link: '9.html', color: ' White' },
+    { id: 'boraldo-tee-m34', name: 'Boraldo Tee Model-34(Hidden Art)', price: 289, image: 't-shirt design34.jpg', link: '10.html', color: ' Black' },
+    { id: 'boraldo-tee-m35', name: 'Boraldo Tee Model-35(Dark Abstract Art)', price: 299, image: 't-shirt design35.jpg', link: '11.html', color: ' Green Gray' },
+    { id: 'boraldo-tee-m36', name: 'Boraldo Tee Model-36(Cool Devil)', price: 305, image: 't-shirt design36.jpg', link: '12.html', color: 'Black' },
+  ];
 
-    function renderProducts() {
-      const productList = document.getElementById('product-list');
-      productList.innerHTML = '';
+  function renderProducts() {
+    const productList = document.getElementById('product-list');
+    productList.innerHTML = '';
 
-      products.forEach((product, index) => {
-        productList.innerHTML += `
-            <div class="card reveal">
-              <div class="badge">Premium</div>
-              <img src="${product.image}" alt="${product.name}" loading="lazy">
-              <div class="card-content">
-                <div class="card-top">
-                  <h3>${product.name}</h3>
-                  <strong class="product-price">$${product.price}</strong> 
-                </div>
-                <p>Premium oversized t-shirt designed for minimalist streetwear fashion.</p>
-                
-                <div class="product-color-label">Color: <span>${product.color}</span></div>
-  
-                <div class="card-buttons">
-                  <button class="btn" style="flex:1;" onclick="addToCart(${index})">Add To Cart</button>
-                  <a href="${product.link}" class="btn details-btn">Details</a>
-                </div>
+    products.forEach((product, index) => {
+      productList.innerHTML += `
+          <div class="card reveal">
+            <div class="badge">Premium</div>
+            <img src="${product.image}" alt="${product.name}" loading="lazy">
+            <div class="card-content">
+              <div class="card-top">
+                <h3>${product.name}</h3>
+                <strong class="product-price">$${product.price}</strong> 
+              </div>
+              <p>Premium oversized t-shirt designed for minimalist streetwear fashion.</p>
+              
+              <div class="product-color-label">Color: <span>${product.color}</span></div>
+
+              <div class="card-buttons">
+                <button class="btn" style="flex:1;" onclick="addToCart(${index})">Add To Cart</button>
+                <a href="${product.link}" class="btn details-btn">Details</a>
               </div>
             </div>
-          `;
-      });
-      revealElements();
-    }
-
-    // Add product to cart logic with dynamic color parameter
-    function addToCart(index) {
-      const selectedProduct = products[index];
-
-      const productToCart = {
-        id: selectedProduct.id,
-        name: selectedProduct.name,
-        price: selectedProduct.price,
-        size: "L",
-        color: selectedProduct.color, // Passes the color directly from object
-        img: selectedProduct.image
-      };
-
-      cart.push(productToCart);
-      localStorage.setItem('threadlab_cart', JSON.stringify(cart));
-
-      updateCartUI();
-      openCartDrawer();
-    }
-
-    // Update Cart Window Interface & Live Count
-    function updateCartUI() {
-      // Counter update
-      document.getElementById('cart-count').innerText = cart.length;
-
-      // Container Update
-      const container = document.getElementById('cart-items-container');
-      container.innerHTML = '';
-
-      if (cart.length === 0) {
-        container.innerHTML = '<p style="text-align:center; color:#888; margin-top:20px;">Your cart is empty.</p>';
-        document.getElementById('cart-total-price').innerText = '$0';
-        return;
-      }
-
-      let totalPrice = 0;
-
-      cart.forEach((item, index) => {
-        totalPrice += item.price;
-        container.innerHTML += `
-            <div class="cart-item">
-              <img src="${item.img}" alt="${item.name}">
-              <div class="cart-item-details">
-                <h4>${item.name}</h4>
-                <span>$${item.price} | Color: <strong>${item.color}</strong> | Size: ${item.size}</span>
-              </div>
-              <button class="remove-item-btn" onclick="removeFromCart(${index})">Remove</button>
-            </div>
-          `;
-      });
-
-      document.getElementById('cart-total-price').innerText = `$${totalPrice}`;
-    }
-
-    // Remove item from cart window
-    function removeFromCart(index) {
-      cart.splice(index, 1);
-      localStorage.setItem('threadlab_cart', JSON.stringify(cart));
-      updateCartUI();
-    }
-
-    // Drawer State Handling
-    const cartBtn = document.getElementById('cart-btn');
-    const closeCart = document.getElementById('close-cart');
-    const cartDrawer = document.getElementById('cart-drawer');
-    const cartOverlay = document.getElementById('cart-overlay');
-
-    function openCartDrawer() {
-      cartDrawer.classList.add('active');
-      cartOverlay.classList.add('active');
-      document.body.classList.add('cart-open');
-    }
-
-    function closeCartDrawer() {
-      cartDrawer.classList.remove('active');
-      cartOverlay.classList.remove('active');
-      document.body.classList.remove('cart-open');
-    }
-
-    cartBtn.addEventListener('click', openCartDrawer);
-    closeCart.addEventListener('click', closeCartDrawer);
-    cartOverlay.addEventListener('click', closeCartDrawer);
-
-    // Elements reveal animation trigger
-    function revealElements() {
-      const reveals = document.querySelectorAll('.reveal');
-      reveals.forEach((element) => {
-        const windowHeight = window.innerHeight;
-        const revealTop = element.getBoundingClientRect().top;
-        const revealPoint = 75;
-
-        if (revealTop < windowHeight - revealPoint) {
-          element.classList.add('active');
-        }
-      });
-    }
-
-    // Mobile Navbar Toggles
-    const menuToggle = document.getElementById('menu-toggle');
-    const navLinks = document.getElementById('nav-links');
-    const navItems = document.querySelectorAll('.nav-item');
-
-    menuToggle.addEventListener('click', (e) => {
-      e.stopPropagation();
-      const isOpen = navLinks.classList.toggle('active');
-      if (isOpen) {
-        document.body.classList.add('menu-open');
-      } else {
-        document.body.classList.remove('menu-open');
-      }
+          </div>
+        `;
     });
-
-    navItems.forEach(item => {
-      item.addEventListener('click', () => {
-        navLinks.classList.remove('active');
-        document.body.classList.remove('menu-open');
-      });
-    });
-
-    window.addEventListener('resize', () => {
-      if (window.innerWidth > 768) {
-        navLinks.classList.remove('active');
-        document.body.classList.remove('menu-open');
-      }
-    });
-
-    window.addEventListener('scroll', revealElements);
-
-    // Initial Render
-    renderProducts();
-    updateCartUI();
     revealElements();
-  </script>
-  </body>
-  
-  </html>
+  }
+
+  // Add product to cart logic with dynamic color parameter
+  function addToCart(index) {
+    const selectedProduct = products[index];
+
+    const productToCart = {
+      id: selectedProduct.id,
+      name: selectedProduct.name,
+      price: selectedProduct.price,
+      size: "L",
+      color: selectedProduct.color, // Passes the color directly from object
+      img: selectedProduct.image
+    };
+
+    cart.push(productToCart);
+    localStorage.setItem('threadlab_cart', JSON.stringify(cart));
+
+    updateCartUI();
+    openCartDrawer();
+  }
+
+  // Update Cart Window Interface & Live Count
+  function updateCartUI() {
+    // Counter update
+    document.getElementById('cart-count').innerText = cart.length;
+
+    // Container Update
+    const container = document.getElementById('cart-items-container');
+    container.innerHTML = '';
+
+    if (cart.length === 0) {
+      container.innerHTML = '<p style="text-align:center; color:#888; margin-top:20px;">Your cart is empty.</p>';
+      document.getElementById('cart-total-price').innerText = '$0';
+      return;
+    }
+
+    let totalPrice = 0;
+
+    cart.forEach((item, index) => {
+      totalPrice += item.price;
+      container.innerHTML += `
+          <div class="cart-item">
+            <img src="${item.img}" alt="${item.name}">
+            <div class="cart-item-details">
+              <h4>${item.name}</h4>
+              <span>$${item.price} | Color: <strong>${item.color}</strong> | Size: ${item.size}</span>
+            </div>
+            <button class="remove-item-btn" onclick="removeFromCart(${index})">Remove</button>
+          </div>
+        `;
+    });
+
+    document.getElementById('cart-total-price').innerText = `$${totalPrice}`;
+  }
+
+  // Remove item from cart window
+  function removeFromCart(index) {
+    cart.splice(index, 1);
+    localStorage.setItem('threadlab_cart', JSON.stringify(cart));
+    updateCartUI();
+  }
+
+  // Drawer State Handling
+  const cartBtn = document.getElementById('cart-btn');
+  const closeCart = document.getElementById('close-cart');
+  const cartDrawer = document.getElementById('cart-drawer');
+  const cartOverlay = document.getElementById('cart-overlay');
+
+  function openCartDrawer() {
+    cartDrawer.classList.add('active');
+    cartOverlay.classList.add('active');
+    document.body.classList.add('cart-open');
+  }
+
+  function closeCartDrawer() {
+    cartDrawer.classList.remove('active');
+    cartOverlay.classList.remove('active');
+    document.body.classList.remove('cart-open');
+  }
+
+  cartBtn.addEventListener('click', openCartDrawer);
+  closeCart.addEventListener('click', closeCartDrawer);
+  cartOverlay.addEventListener('click', closeCartDrawer);
+
+  // Elements reveal animation trigger
+  function revealElements() {
+    const reveals = document.querySelectorAll('.reveal');
+    reveals.forEach((element) => {
+      const windowHeight = window.innerHeight;
+      const revealTop = element.getBoundingClientRect().top;
+      const revealPoint = 75;
+
+      if (revealTop < windowHeight - revealPoint) {
+        element.classList.add('active');
+      }
+    });
+  }
+
+  // Mobile Navbar Toggles
+  const menuToggle = document.getElementById('menu-toggle');
+  const navLinks = document.getElementById('nav-links');
+  const navItems = document.querySelectorAll('.nav-item');
+
+  menuToggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const isOpen = navLinks.classList.toggle('active');
+    if (isOpen) {
+      document.body.classList.add('menu-open');
+    } else {
+      document.body.classList.remove('menu-open');
+    }
+  });
+
+  navItems.forEach(item => {
+    item.addEventListener('click', () => {
+      navLinks.classList.remove('active');
+      document.body.classList.remove('menu-open');
+    });
+  });
+
+  // FEATURE: Dismiss mobile sidebar navigation menu when tapping outside
+  window.addEventListener('click', (e) => {
+    if (navLinks.classList.contains('active') && !navLinks.contains(e.target) && e.target !== menuToggle) {
+      navLinks.classList.remove('active');
+      document.body.classList.remove('menu-open');
+    }
+  });
+
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) {
+      navLinks.classList.remove('active');
+      document.body.classList.remove('menu-open');
+    }
+  });
+
+  window.addEventListener('scroll', revealElements);
+
+  // Initial Render
+  renderProducts();
+  updateCartUI();
+  revealElements();
+</script>
+</body>
+
+</html>
